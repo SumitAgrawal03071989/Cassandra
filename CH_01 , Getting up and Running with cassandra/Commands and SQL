@@ -1,0 +1,24 @@
+Install cassandra with homebrew.
+
+	// install cassandra
+	brew install cassandra
+
+	// install cassandra shell.
+	pip install cassandra-driver cql
+
+	// starts cassandra shell to interact with cassandra
+	cqlsh 
+
+
+
+//Create Key Space.
+
+CREATE KEYSPACE "my_status"
+WITH REPLICATION = {
+	'class' : 'SimpleStrategy' , 'replication_factor' : 1
+};
+
+
+//select key space
+
+USE "my_status";
