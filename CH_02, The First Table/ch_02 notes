@@ -1,0 +1,70 @@
+*Table and column option 
+
+	Cassandra does not offer auto-incrementing primary keys; 
+	each row, when created must be explicitely assigned parimary key by client.
+
+	Does not have concept of nulls.
+
+	Does not support default values
+
+	Does not provide data validation like length of column.
+
+	Basically cassandra assumes that above constraints are easily available / handelled at application level.
+
+
+* The Type System
+
+	Strings
+		text (UTF-8) , ascii (bytes 0-127)
+
+	Integers
+		int (32-bit) 
+		bigint (64-bit)
+		varint (no limit)
+
+	Floating point and decimal numbers
+		float (32-bit)
+		double (64-bit)
+		decimal (no limit)
+
+	Dates and times
+		Timestamp
+		uuid ( version 1 and version 4 UUID )
+		timeuuid ( version 1 UUID ) , has functionality to convert between UUID and timestamp
+
+		UUID Version 1
+			generated using computers mac and high precision timestamp.
+
+		UUID Version 4
+			generated with random number and pseudorandom numbers
+
+	Booleans
+
+	Blobs
+		image, audio, enctrypted data.
+
+
+* Inserts.
+	In cassandra columns with values only takes spaces.
+
+
+* Paginating through results.
+	We can not use where clause directly on primary key, as it does not store primary key as it is.
+	To query on primary key column , we need to use token() function.
+
+	ALLOW FILTERING, if we want to filter restults with non partition column.
+
+
+* Mental model of cassandra till now.
+	Key value store.
+
+
+
+
+
+
+
+
+
+
+

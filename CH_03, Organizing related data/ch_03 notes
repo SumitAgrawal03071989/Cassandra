@@ -1,0 +1,12 @@
+* Brodly two ways desribed.
+	1) Compount key.
+	2) Static columns.
+
+* in "user_status_updates" table username is partition key.
+
+* records are stored in sorted orders based on partition and clustering key.
+
+
+Static columns note.
+	Will hold single value per cluster.
+	It illegal to declare static column without cluster column.
