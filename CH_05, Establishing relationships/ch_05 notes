@@ -1,0 +1,33 @@
+In Establishing relationships 
+
+Denormalization.
+
+	walked through a use case of feature where user will be following some people and vice versa.
+
+	This can be implemented in "De normalised" way as follow.
+
+	1) A table with "user_inbound_follower" -- will answer who follows "X" user.
+	2) A table with "user_outbound_follower" -- will answer who "X" user follows.
+
+	here we will have to make a duplicate entry in both tables each time a user follows someone.
+
+
+Secondary Index.
+
+	A second solution would be "secondary index".
+	With secondary index we can query columns which are not partition key
+
+	Secondary index should be used with columns with low cardinality , e.g user country.
+
+
+	Downsight of secondary indexes.
+
+	1) We can have secondary index on one column, more than one column is not allowed.
+	2) secondary index search is not as efficiant as partition key search ( as it may has to walk through multipal partitions)
+	3) secondary index only support equality operator.
+
+
+
+
+
+
